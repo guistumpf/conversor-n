@@ -3,13 +3,12 @@
   box-sizing: border-box;
 }
 
-
 body{
-  min-height: 100vh;
+ min-height: 100vh;
   display: flex;
   justify-content: center;
   place-items: center;
-background-color: #121212;
+  background-color: #121212;
 }
 
 .caixaconv{
