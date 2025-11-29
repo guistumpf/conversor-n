@@ -5,24 +5,26 @@ import { useState } from "react"
 export default function Conv(){
 
 const [input,setinput] = useState<any>(0)
-
 const number = parseFloat(input)
 
-let valor =  (input - 32) * 5/9
+let valor =  (number - 32) * 5/9
+  
+let real: any = valor.toFixed(1) + "°C"
 
-if(input === ""){
+  if(input === ""){
   valor = NaN
-}
+  real = Number
+  }
 
 console.log(valor)
   return(
-    <section>
-      <h1>Converter</h1>
+    <section className="caixaconv">
+      <h1 className="conv">Conversor de temperaturas</h1>
+      <p className="sub">Converta °F para °C</p>
       <input type="number" onChange={(e) => {
-setinput(e.target.value)
-console.log(e.target.value)
-      }}/>
-      <p>C:{valor.toFixed(1)}</p>
+        setinput(e.target.value)
+      }} className="val" placeholder="°F" pattern="[0-9"/>
+      <p className="rel">Celsius: {real}</p>
     </section>
   )
 }
